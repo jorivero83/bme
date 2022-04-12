@@ -1,13 +1,5 @@
 from urllib.request import urlopen
-import certifi
-import json
 import pandas as pd
-import os
-from collections import OrderedDict
-from tqdm import tqdm
-from datetime import (date, datetime)
-import yahoo_fin.stock_info as si
-import joblib
 from bs4 import BeautifulSoup
 from bme import get_meta
 
