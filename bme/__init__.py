@@ -41,7 +41,6 @@ class BME:
         tbl = self.soup.find('table', attrs={'id': 'ctl00_Contenido_tblAcciones'})
         for a in ['DifFlSb', 'DifFlBj']:
             for v in tbl.find_all('td', attrs={'class': a}):
-                # print(v.text, 'https://www.bolsamadrid.es' + v.a.get('href'))
                 map_urls[v.text] = 'https://www.bolsamadrid.es' + str(v.a.get('href'))
 
         return map_urls
@@ -98,14 +97,12 @@ def get_meta(x):
     table = soup_str.find('table', attrs={'class': "FrmBusq"})
     table_vals, table_headers = [], []
     cols = [v.text for v in table.find_all('td', attrs={'class': 'Etiqueta2'})]
-    # print([v.text for v in table.find_all('td', attrs={'class': 'Etiqueta2'})])
     row = []
     for td in table.find_all('td', attrs={'class': 'Campo'}):
         if td.find('input'):
             val = get_date(td)
         else:
             val = re.sub('^\s+|\s+$', '', td.text)
-        # print(val)
         row.append(val)
     table_vals.append(row)
     return pd.DataFrame(data=table_vals, columns=cols).iloc[-1].to_dict()
