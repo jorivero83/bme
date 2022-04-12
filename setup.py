@@ -21,7 +21,7 @@ setup(
     include_package_data=False,
 
     # Details
-    url="https://github.com/jorivero83/bme_data",
+    url="https://github.com/jorivero83/bme",
 
     #
     # license="LICENSE.txt",

@@ -6,7 +6,7 @@ A package to download data from [www.bolsamadrid.es](https://www.bolsamadrid.es/
 ### Install 
 
 ```commandline
-pip install bme
+pip install git+https://github.com/jorivero83/bme.git
 ```
 
 ### Basic usage ###
